@@ -1,99 +1,101 @@
-body {
-    background-color: #888;
-    color: #FFF;
-  }
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-  body:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
+html, body {
+  height: 100%;
+  background: #f5f9fd;
+}
 
-  .left-sidebar {
-    width: 300px;
-    float: left;
-  }
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); /* WIBINWEB */
+  width: 369px;
+  height: 547px;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate(-50%, -50%) perspective(600px) rotateY(20deg) rotateX(10deg);
+          transform: translate(-50%, -50%) perspective(600px) rotateY(20deg) rotateX(10deg);
+}
 
-  .center-sidebar {
-    width: 500px;
-    float: left;
-  }
+.me {
+  position: relative;
+  width: 369px;
+  height: 547px;
+  -webkit-transform: translateZ(80px) scale(0.8);
+          transform: translateZ(80px) scale(0.8);
+}
+.me::before, .me::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background: url("http://www.supah.it/dribbble/006/profile.png") no-repeat 0 0;
+}
+.me::after {
+  height: 30px;
+  top: auto;
+  bottom: -15px;
+  z-index: -1;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  background-size: 100% 30px;
+  border-radius: 100px; /* WIBINWEB */
+}
+.me .eye, .me .eye::before {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 175px;
+  left: 120px;
+  z-index: -1;
+  background: url(http://www.supah.it/dribbble/006/eye.png) no-repeat center;
+}
+.me .eye::before {
+  content: "";
+  top: -2px;
+  left: 97px;
+}
 
-  h2 {
-    color: #FFF;
-  }
-
-  a,
-  .prop{
-    color: #F7E309;
-  }
-
-  #box {
-    width: 100px;
-    margin: 70px;
-  }
-
-  .box {
-    width: 100px;
-    height: 100px;
-    margin: 30px auto;
-    position: relative;
-  }
-
-  .box div {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    top: 0;
-    font-weight: bold;
-    font-size: 40px;
-    width: 100px;
-    height: 100px;
-    color: #111;
-    /*transform-origin: 50% 50% -50px;*/
-    border: 1px solid #666;
-  }
-
-  .box .side1 {
-    background: hsla(0, 100%, 50%, 0.7);
-  }
-
-  .box .side2 {
-    background: hsla(60, 100%, 50%, 0.7);
-  }
-
-  .box .side3 {
-    /*background: hsla(120, 100%, 50%, 0.7);*/
-  }
-
-  .box .side3 div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: hsla(120, 100%, 50%, 0.7);
-  }
-
-  .box .side4 {
-    /*background: hsla(180, 100%, 50%, 0.7);*/
-  }
-
-  .box .side4 div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: hsla(180, 100%, 50%, 0.7);
-  }
-
-  .box .side5 {
-    background: hsla(240, 100%, 50%, 0.7);
-  }
-
-  .box .side6 {
-    background: hsla(300, 100%, 50%, 0.7);
-  }
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 390px;
+  height: 595px;
+  -webkit-transform: translateZ(150px) translateX(-11px) translateY(-26px) scale(0.55);
+          transform: translateZ(150px) translateX(-11px) translateY(-26px) scale(0.55);
+  border: 3px solid rgb(255, 255, 255);
+  text-align: center;
+  font-size: 100px;
+  line-height: 1000px; /* WIBINWEB */
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.36) 39%, rgba(255, 255, 255, 0.07) 41%, rgba(255, 255, 255, 0) 51%, rgb(0, 0, 0) 100%);
+  opacity: 0.3;
+  border-radius: 8px;
+}
+.text::after {
+  width: 100%;
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 1;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  text-indent: 20px;
+}
